@@ -1,5 +1,7 @@
 # passport-outlook
 
+[![Build Status](https://travis-ci.org/clocked0ne/passport-outlook.svg)](https://travis-ci.org/clocked0ne/passport-outlook)
+
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Outlook](http://www.outlook.com/) accounts (aka [Windows Live](http://www.live.com/))
 using the OAuth 2.0 API.
