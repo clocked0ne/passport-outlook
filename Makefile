@@ -21,16 +21,6 @@ include support/mk/istanbul.mk
 include support/mk/notes.mk
 include support/mk/jshint.mk
 
-# ==============================================================================
-# Reports
-# ==============================================================================
-include support/mk/coveralls.mk
-
-# ==============================================================================
-# Continuous Integration
-# ==============================================================================
-submit-cov-to-coveralls: submit-istanbul-lcov-to-coveralls
-
 # Travis CI
 ci-travis: test test-cov
 
@@ -44,4 +34,4 @@ clean:
 clobber: clean clobber-node
 
 
-.PHONY: test test-cov view-cov lint lint-tests submit-cov-to-coveralls ci-travis clean clobber
+.PHONY: test test-cov view-cov lint lint-tests ci-travis clean clobber

@@ -72,7 +72,7 @@ describe('Strategy#userProfile', function() {
   
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
-      expect(err.message).to.equal('Failed to parse user profile');
+      expect(err.message).to.equal('Failed to fetch user profile');
     });
   });
   
