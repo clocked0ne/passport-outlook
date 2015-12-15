@@ -6,8 +6,8 @@
 with [Outlook](http://www.outlook.com/) accounts (aka [Windows Live](http://www.live.com/))
 using the OAuth 2.0 API.
 
-This module lets you authenticate using Outlook REST API in your Node.js
-applications. By plugging into Passport, Outlook REST API authentication
+This module lets you authenticate using Outlook REST API v2 in your Node.js
+applications. By plugging into Passport, Outlook REST API v2 authentication
 can be easily and unobtrusively integrated into any application or
 framework that supports [Connect](http://www.senchalabs.org/connect/)-style
 middleware, including [Express](http://expressjs.com/).
@@ -20,10 +20,10 @@ middleware, including [Express](http://expressjs.com/).
 
 #### Configure Strategy
 
-The Windows Live authentication strategy authenticates users using a Windows
-Live account and OAuth 2.0 tokens.  The strategy requires a `verify` callback,
-which accepts these credentials and calls `done` providing a user, as well as
-`options` specifying a client ID, client secret, and callback URL.
+The Outlook REST API v2 authentication strategy authenticates users using an
+Outlook.com account and OAuth 2.0 tokens.  The strategy requires a `verify`
+callback, which accepts these credentials and calls `done` providing a user,
+as well as `options` specifying a client ID, client secret, and callback URL.
 
     passport.use(new OutlookStrategy({
         clientID: OUTLOOK_CLIENT_ID,
