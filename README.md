@@ -2,6 +2,14 @@
 
 [![Build Status](https://travis-ci.org/clocked0ne/passport-outlook.svg)](https://travis-ci.org/clocked0ne/passport-outlook)
 
+## Work in progress
+
+This module is not yet production ready. The Outlook REST API v2 app model is
+in preview status and Microsoft are upgrading user accounts in batches in
+order to support the v2 API. While this is ongoing and we are working with
+specially configured test accounts, this package is still undergoing dev work
+and should not be deemed production ready.
+
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Outlook](http://www.outlook.com/) accounts (aka [Windows Live](http://www.live.com/))
 using the OAuth 2.0 API.
