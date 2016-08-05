@@ -95,7 +95,7 @@ app.get('/auth/outlook/callback',
   });
 ```
 
-*Note:* `'offline_access' is a required scope in order to obtain a
+*Note:* `'offline_access'` is a required scope in order to obtain a
 `refresh_token`. More information is available in the [MSDN Dev Center](https://msdn.microsoft.com/en-us/office/office365/api/use-outlook-rest-api#get-an-access-token).
 
 ## Examples
