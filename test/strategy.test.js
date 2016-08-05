@@ -12,8 +12,8 @@ describe('Strategy', function() {
     },
     function() {});
     
-  it('should be named outlook', function() {
-    expect(strategy.name).to.equal('outlook');
+  it('should be named windowslive', function() {
+    expect(strategy.name).to.equal('windowslive');
   });
   
 });

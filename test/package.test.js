@@ -9,8 +9,9 @@ describe('passport-outlook', function() {
     expect(strategy).to.equal(strategy.Strategy);
   });
   
-  it('should export Strategy constructor', function() {
+  it('should export Strategy constructor as module', function() {
     expect(strategy.Strategy).to.be.a('function');
+    expect(strategy).to.equal(strategy.Strategy);
   });
   
 });

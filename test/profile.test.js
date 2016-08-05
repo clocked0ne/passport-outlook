@@ -19,24 +19,11 @@ describe('profile.parse', function() {
     });
     
     it('should parse profile', function() {
-      expect(profile.id).to.equal('8c8ce076ca27823f');
-      expect(profile.displayName).to.equal('Roberto Tamburello');
-      expect(profile.name.familyName).to.equal('Tamburello');
-      expect(profile.name.givenName).to.equal('Roberto');
-      
-      expect(profile.emails).to.have.length(4);
-      expect(profile.emails[0].value).to.equal('Roberto@contoso.com');
-      expect(profile.emails[0].type).to.equal('account');
-      expect(profile.emails[0].primary).to.be.true;
-      expect(profile.emails[1].value).to.equal('Roberto@fabrikam.com');
-      expect(profile.emails[1].type).to.equal('home');
-      expect(profile.emails[1].primary).to.be.undefined;
-      expect(profile.emails[2].value).to.equal('Robert@adatum.com');
-      expect(profile.emails[2].type).to.equal('work');
-      expect(profile.emails[2].primary).to.be.undefined;
-      expect(profile.emails[3].value).to.equal('Roberto@adventure-works.com');
-      expect(profile.emails[3].type).to.equal('other');
-      expect(profile.emails[3].primary).to.be.undefined;
+      expect(profile.Id).to.equal('0dbf6616-20bd-4cbd-860d-47c5b7953e76@c512ffd1-581d-4dc0-a672-faee32f6387c');
+      expect(profile.EmailAddress).to.equal('AllieB@oauthplay.onmicrosoft.com');
+      expect(profile.DisplayName).to.equal('Allie Bellew');
+      expect(profile.Alias).to.equal('AllieB');
+      expect(profile.MailboxGuid).to.equal('8d899a1e-bde4-4946-8817-005e6f11d36d');
     });
   });
   

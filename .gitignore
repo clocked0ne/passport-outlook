@@ -1,5 +1,9 @@
 build/
+docs/
 reports/
+
+# Mac OS X
+.DS_Store
 
 # Node.js
 node_modules/

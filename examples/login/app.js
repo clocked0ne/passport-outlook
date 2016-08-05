@@ -3,7 +3,7 @@ var express = require('express')
   , util = require('util')
   , OutlookStrategy = require('passport-outlook').Strategy;
 
-var OUTLOOK_CLIENT_ID = "--insert-outlook-client-id-here--"
+var OUTLOOK_CLIENT_ID = "--insert-outlook-client-id-here--";
 var OUTLOOK_CLIENT_SECRET = "--insert-outlook-client-secret-here--";
 
 
@@ -30,7 +30,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new OutlookStrategy({
     clientID: OUTLOOK_CLIENT_ID,
     clientSecret: OUTLOOK_CLIENT_SECRET,
-    callbackURL: "http://self.hansonhq.com:3000/auth/outlook/callback"
+    callbackURL: "http://www.example.com/auth/outlook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
@@ -85,8 +85,12 @@ app.get('/login', function(req, res){
 //   will redirect the user back to this application at
 //   /auth/outlook/callback
 app.get('/auth/outlook',
-  passport.authenticate('outlook', { scope: ['openid',
-               'https://outlook.office.com/mail.read'] }),
+  passport.authenticate('windowslive', { scope: [
+    'openid',
+    'profile',
+    'offline_access',
+    'https://outlook.office.com/Mail.Read'
+  ] }),
   function(req, res){
     // The request will be redirected to Outlook for authentication, so
     // this function will not be called.
@@ -98,7 +102,7 @@ app.get('/auth/outlook',
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
 app.get('/auth/outlook/callback', 
-  passport.authenticate('outlook', { failureRedirect: '/login' }),
+  passport.authenticate('windowslive', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
   });

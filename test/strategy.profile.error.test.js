@@ -15,7 +15,7 @@ describe('Strategy#userProfile', function() {
   
     // mock
     strategy._oauth2.get = function(url, accessToken, callback) {
-      if (url != 'https://apis.live.net/v5.0/me') { return callback(new Error('wrong url argument')); }
+      if (url != 'https://outlook.office.com/api/v2.0/me') { return callback(new Error('wrong url argument')); }
       if (accessToken != 'token') { return callback(new Error('wrong token argument')); }
     
       var body = '{ \
@@ -54,7 +54,7 @@ describe('Strategy#userProfile', function() {
   
     // mock
     strategy._oauth2.get = function(url, accessToken, callback) {
-      if (url != 'https://outlook.office.com/mail.read') { return callback(new Error('wrong url argument')); }
+      if (url != 'https://outlook.office.com/Mail.Read') { return callback(new Error('wrong url argument')); }
       if (accessToken != 'token') { return callback(new Error('wrong token argument')); }
     
       var body = 'Hello, world.';

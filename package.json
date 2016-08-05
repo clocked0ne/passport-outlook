@@ -1,6 +1,6 @@
 {
   "name": "passport-outlook",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Outlook REST API v2 authentication strategy for Passport.",
   "keywords": [
     "passport",
@@ -10,7 +10,10 @@
     "hotmail",
     "windowslive",
     "auth",
-    "authn",
+    "oauth",
+    "oauth2",
+    "authorization",
+    "authorisation",
     "authentication",
     "identity"
   ],
@@ -34,11 +37,14 @@
   ],
   "main": "./lib",
   "dependencies": {
-    "passport-oauth2": "1.x.x"
+    "passport-oauth2": "1.x.x",
+    "request": "2.x.x"
   },
   "devDependencies": {
-    "mocha": "2.x.x",
-    "chai": "3.x.x"
+    "make-node": "0.3.x",
+    "mocha": "3.x.x",
+    "chai": "3.x.x",
+    "chai-passport-strategy": "1.x.x"
   },
   "engines": {
     "node": ">= 0.12.0"

@@ -1,10 +1,18 @@
 language: "node_js"
 node_js:
-  - "5.2.0"
+  - "6.0"
+  - "5.0"
   - "4.0"
   - "0.12"
 
 before_install:
- - "npm install istanbul -g"
+  - "npm install make-node@0.3.x -g"
+  - "preinstall-compat"
 
-script: "make ci-travis"
+script:
+  - "make test-cov"
+
+after_success:
+  - "make report-cov"
+
+sudo: false
