@@ -1,6 +1,6 @@
 {
   "name": "passport-outlook",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Outlook REST API v2 authentication strategy for Passport.",
   "keywords": [
     "passport",
@@ -22,6 +22,16 @@
     "email": "webdevelopment@clocked0ne.co.uk",
     "url": "http://www.clocked0ne.co.uk/"
   },
+  "contributors": [
+    {
+      "name": "DJphilomath",
+      "url": "https://github.com/DJphilomath"
+    },
+    {
+      "name": "Andrés González",
+      "url": "https://github.com/andreider04"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/clocked0ne/passport-outlook.git"

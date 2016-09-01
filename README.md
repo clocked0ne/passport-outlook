@@ -24,6 +24,15 @@ $ npm install --save passport-outlook
 
 ## Usage
 
+#### Upgrading for v2
+
+If you were using the package before `v2.0.0`, please note that the `profile`
+JSON returned has been updated to match the normalized contact schema outlined
+by [Passport](http://passportjs.org/docs/profile) and used by other strategies.
+
+Therefore, you will need to update your application to match these modified JSON
+properties.
+
 #### Create an Application
 
 Before using `passport-outlook`, you must register an application with Microsoft.
@@ -138,6 +147,11 @@ $ make view-cov
 
   - [Nigel Horton](http://github.com/clocked0ne)
   - [Jared Hanson](http://github.com/jaredhanson)
+
+### Additional Contributors
+
+  - [DJphilomath](http://github.com/DJphilomath)
+  - [Andrés González](http://github.com/andreider04)
 
 ## License
 
