@@ -1,3 +1,10 @@
+2.1.0 / 2010-09-27
+==================
+
+  * BUGFIX: Return OutlookAPIError on API 404 response
+  * Name override by options - [#8](https://github.com/clocked0ne/passport-outlook/issues/8)
+  * Update README.md Fix wording and typo - [#7](https://github.com/clocked0ne/passport-outlook/pull/7)
+
 2.0.0 / 2010-09-01
 ==================
 
