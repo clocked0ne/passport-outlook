@@ -134,8 +134,8 @@ $ make test
 
 #### Coverage
 
-All new feature development is expected to have test coverage. Patches that
-increse test coverage are happily accepted. Coverage reports can be viewed by
+All new features are expected to have test coverage. Patches that
+increase test coverage are happily accepted. Coverage reports can be viewed by
 executing:
 
 ```bash
@@ -152,6 +152,7 @@ $ make view-cov
 
   - [DJphilomath](http://github.com/DJphilomath)
   - [Andrés González](http://github.com/andreider04)
+  - [Dan Perry](http://github.com/dperry)
 
 ## License
 
