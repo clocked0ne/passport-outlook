@@ -17,3 +17,42 @@ describe('Strategy', function() {
   });
   
 });
+
+describe('Strategy.authorizationParams', function() {
+
+  var strategy = new OutlookStrategy({
+      clientID: 'ABC123',
+      clientSecret: 'secret'
+    },
+    function() {});
+
+  it('returns "locale" param', function() {
+    var params = { locale: "en" };
+    expect(strategy.authorizationParams(params)).to.deep.equal(params);
+  });
+
+  it('returns "display" param', function() {
+    var params = { display: "some" };
+    expect(strategy.authorizationParams(params)).to.deep.equal(params);
+  });
+
+  it('returns "login_hint" param', function() {
+    var params = { loginHint: "some@email.com" };
+    expect(strategy.authorizationParams(params)).to.deep.equal({ login_hint: params.loginHint });
+  });
+
+  it('returns a combination of valid params', function() {
+    var params = {
+      some: "other param",
+      display: "some",
+      loginHint: "some@email.com",
+      locale: "en",
+      invalid: "param"
+    };
+    expect(strategy.authorizationParams(params)).to.deep.equal({
+      display: params.display,
+      login_hint: params.loginHint,
+      locale: params.locale
+    });
+  });
+});
