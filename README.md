@@ -145,17 +145,18 @@ $ make view-cov
 
 ## Credits
 
-  - [Nigel Horton](http://github.com/clocked0ne)
-  - [Jared Hanson](http://github.com/jaredhanson)
+  - [Nigel Horton](https://github.com/clocked0ne)
+  - [Jared Hanson](https://github.com/jaredhanson)
 
 ### Additional Contributors
 
-  - [DJphilomath](http://github.com/DJphilomath)
-  - [Andrés González](http://github.com/andreider04)
-  - [Dan Perry](http://github.com/dperry)
+  - [Thomas Potaire](https://github.com/http-teapot)
+  - [DJphilomath](https://github.com/DJphilomath)
+  - [Andrés González](https://github.com/andreider04)
+  - [Dan Perry](https://github.com/dperry)
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2015-2016 Nigel Horton
+Copyright (c) 2015-2018 Nigel Horton
