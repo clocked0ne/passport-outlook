@@ -1,6 +1,6 @@
 {
   "name": "passport-outlook",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Outlook REST API v2 authentication strategy for Passport.",
   "keywords": [
     "passport",
@@ -23,6 +23,10 @@
     "url": "http://www.clocked0ne.co.uk/"
   },
   "contributors": [
+    {
+      "name": "Thomas Potaire",
+      "url": "https://github.com/http-teapot"
+    },
     {
       "name": "DJphilomath",
       "url": "https://github.com/DJphilomath"
