@@ -76,6 +76,35 @@ passport.use(new OutlookStrategy({
 ));
 ```
 
+NOTE: If you want to use the express request, you must use the option `passReqToCallback: true`, then Passport will send the request as the first parameter.
+
+```js
+passport.use(new OutlookStrategy({
+    clientID: OUTLOOK_CLIENT_ID,
+    clientSecret: OUTLOOK_CLIENT_SECRET,
+    callbackURL: 'http://www.example.com/auth/outlook/callback',
+    passReqToCallback: true
+  },
+  function(req, accessToken, refreshToken, profile, done) {
+    var user = {
+      outlookId: profile.id,
+      name: profile.DisplayName,
+      email: profile.EmailAddress,
+      accessToken:  accessToken
+    };
+    if (refreshToken)
+      user.refreshToken = refreshToken;
+    if (profile.MailboxGuid)
+      user.mailboxGuid = profile.MailboxGuid;
+    if (profile.Alias)
+      user.alias = profile.Alias;
+    User.findOrCreate(user, function (err, user) {
+      return done(err, user);
+    });
+  }
+));
+```
+
 #### Authenticate Requests
 
 Use `passport.authenticate()`, specifying the `'windowslive'` strategy, to
