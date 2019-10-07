@@ -76,7 +76,9 @@ passport.use(new OutlookStrategy({
 ));
 ```
 
-NOTE: If you want to use the express request, you must use the option `passReqToCallback: true`, then Passport will send the request as the first parameter.
+*Note:*
+If you want to use the express request, you must use the option
+`passReqToCallback: true`, then Passport will send the request as the first parameter.
 
 ```js
 passport.use(new OutlookStrategy({
@@ -107,8 +109,8 @@ passport.use(new OutlookStrategy({
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'windowslive'` strategy, to
-authenticate requests.
+Use `passport.authenticate()`, specifying the `'windowslive'` (or custom named)
+strategy, to authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
@@ -133,8 +135,39 @@ app.get('/auth/outlook/callback',
   });
 ```
 
-*Note:* `'offline_access'` is a required scope in order to obtain a
+*Note:*
+REST API specific scopes you are using must be fully qualified to match the
+outlook domain, e.g: `https://outlook.office.com/Mail.Read` instead of `Mail.Read`
+This is very important, otherwise you will receive `401` responses.
+
+`'offline_access'` is a required scope in order to obtain a
 `refresh_token`. More information is available in the [MSDN Dev Center](https://msdn.microsoft.com/en-us/office/office365/api/use-outlook-rest-api#get-an-access-token).
+
+#### Customising endpoints
+
+If you need to customise the URLs used by the strategy (such as
+connecting to the [Microsoft Graph](https://developer.microsoft.com/en-us/graph)
+API instead of Office365 REST) this is possible by modifying the
+`options` passed to the strategy:
+
+```js
+passport.use(new OutlookStrategy({
+    clientID: OUTLOOK_CLIENT_ID,
+    clientSecret: OUTLOOK_CLIENT_SECRET,
+    callbackURL: 'http://www.example.com/auth/graph/callback',
+    userProfileURL: 'https://graph.microsoft.com/v1.0/me?$select=userPrincipalName',
+    name: 'msgraph'
+  },
+  function(accessToken, refreshToken, profile, done) {
+     // Callback logic as per examples
+  }
+));
+```
+
+In the example above the strategy `name` is changeed from the default of `'windowslive'`
+to `'msgraph'` and the `userProfileURL` is changed to the correct Microsoft Graph
+API endpoint. If you make this change, please remember to use the appropriate scopes
+for the API.
 
 ## Examples
 
@@ -183,9 +216,10 @@ $ make view-cov
   - [DJphilomath](https://github.com/DJphilomath)
   - [Andrés González](https://github.com/andreider04)
   - [Dan Perry](https://github.com/dperry)
+  - [Jesé Romero Arbelo](https://github.com/Linkaynn)
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2015-2018 Nigel Horton
+Copyright (c) 2015-2019 Nigel Horton
