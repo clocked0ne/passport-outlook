@@ -36,21 +36,33 @@ describe('Strategy.authorizationParams', function() {
     expect(strategy.authorizationParams(params)).to.deep.equal(params);
   });
 
+  it('returns "prompt" param', function() {
+    var params = { prompt: "login" };
+    expect(strategy.authorizationParams(params)).to.deep.equal(params);
+  });
+
   it('returns "login_hint" param', function() {
     var params = { loginHint: "some@email.com" };
     expect(strategy.authorizationParams(params)).to.deep.equal({ login_hint: params.loginHint });
+  });
+
+  it('returns "domain_hint" param', function() {
+    var params = { domainHint: "contoso.com" };
+    expect(strategy.authorizationParams(params)).to.deep.equal({ domain_hint: params.domainHint });
   });
 
   it('returns a combination of valid params', function() {
     var params = {
       some: "other param",
       display: "some",
+      prompt: "login",
       loginHint: "some@email.com",
       locale: "en",
       invalid: "param"
     };
     expect(strategy.authorizationParams(params)).to.deep.equal({
       display: params.display,
+      prompt: params.prompt,
       login_hint: params.loginHint,
       locale: params.locale
     });

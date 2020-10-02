@@ -76,6 +76,10 @@ passport.use(new OutlookStrategy({
 ));
 ```
 
+Additional options are supported as part of the described 
+[implicit grant flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-implicit-grant-flow):
+`prompt`, `login_hint` & `domain_hint`.
+
 *Note:*
 If you want to use the express request, you must use the option
 `passReqToCallback: true`, then Passport will send the request as the first parameter.
