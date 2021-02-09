@@ -1,13 +1,14 @@
 const passport = require("passport");
 const OutlookStrategy = require("../lib/strategy");
+require("dotenv").config();
 
 passport.use(
   new OutlookStrategy(
     {
       callbackURL: "http://localhost:3000/auth/outlook/redirect",
       passReqToCallback: true,
-      clientID: "3d1dc301-4f26-4b9c-a641-640d237c5ebe",
-      clientSecret: "6o9sdc.u3eI-YQ_BGa4zeJ~G9_0mgbr2Tc",
+      clientID: "your-client-id",
+      clientSecret: "your-client-secret",
       userProfileURL: "https://graph.microsoft.com/v1.0/me/",
     },
     (req, accessToken, refreshToken, profile, done) => {
