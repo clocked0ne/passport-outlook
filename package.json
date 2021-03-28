@@ -1,6 +1,6 @@
 {
   "name": "passport-outlook",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Outlook REST API v2 authentication strategy for Passport.",
   "keywords": [
     "passport",
