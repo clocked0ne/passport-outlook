@@ -1,6 +1,6 @@
 {
   "name": "passport-outlook",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Outlook REST API v2 authentication strategy for Passport.",
   "keywords": [
     "passport",
@@ -38,6 +38,10 @@
     {
       "name": "Dan Perry",
       "url": "https://github.com/dperry"
+    },
+    {
+      "name": "Lakhan Nad",
+      "url": "https://github.com/Lakhan-Nad"
     }
   ],
   "repository": {
@@ -55,17 +59,16 @@
   ],
   "main": "./lib",
   "dependencies": {
-    "passport-oauth2": "1.x.x",
-    "request": "2.x.x"
+    "passport-oauth2": "1.x.x"
   },
   "devDependencies": {
-    "make-node": "0.3.x",
-    "mocha": "3.x.x",
-    "chai": "3.x.x",
+    "make-node": "0.4.x",
+    "mocha": "8.x.x",
+    "chai": "4.x.x",
     "chai-passport-strategy": "1.x.x"
   },
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">= 10.0.0"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js"

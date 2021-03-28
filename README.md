@@ -24,6 +24,11 @@ $ npm install --save passport-outlook
 
 ## Usage
 
+#### v3
+
+There are no behavioural changes but as of v3 the minimum required NodeJS version
+is v10. This should not affect most users but is a breaking change nonetheless.
+
 #### Upgrading for v2
 
 If you were using the package before `v2.0.0`, please note that the `profile`

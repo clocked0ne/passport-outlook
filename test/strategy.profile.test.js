@@ -31,7 +31,7 @@ describe('Strategy#userProfile', function() {
          "MailboxGuid": "8d899a1e-bde4-4946-8817-005e6f11d36d" \
       }';
   
-      callback(null, undefined, body);
+      callback(null, body);
     };
     
     

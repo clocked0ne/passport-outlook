@@ -65,7 +65,7 @@ describe('Strategy#userProfile', function() {
            }
         };
 
-      callback(null, res, undefined);
+      callback(null, undefined, res);
     };
 
     var err, profile;
